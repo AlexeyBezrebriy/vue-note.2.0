@@ -1,10 +1,10 @@
 <template>
   <li>
-    <span v-bind:class="{ done: todo.completed }">
+    <span>
       <strong>{{ index + 1 }}</strong>
-      {{ todo.title }}
+      {{ note.title }}
     </span>
-    <button class="rm" v-on:click="$emit('remove-todo', todo.id)">
+    <button class="rm" v-on:click="$emit('remove-note', note.id)">
       &times;
     </button>
   </li>
@@ -13,7 +13,7 @@
 <script>
   export default {
     props: {
-      todo: {
+      note: {
         type: Object,
         required: true,
       },
@@ -40,9 +40,5 @@
 
   input {
     margin-right: 1rem;
-  }
-
-  .done {
-    text-decoration: line-through;
   }
 </style>

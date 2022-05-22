@@ -1,30 +1,30 @@
 <template>
   <div>
-    <h2>Todo application</h2>
+    <h2>Note application</h2>
     <router-link to="/">Home</router-link>
     <hr />
-    <AddTodo @add-todo="addTodo" />
+    <AddNote @add-note="addNote" />
 
     <hr />
     <Loader v-if="loading" />
-    <TodoList
-      v-else-if="todos.length"
-      v-bind:todos="todos"
-      @remove-todo="removeTodo"
+    <NoteList
+      v-else-if="notes.length"
+      v-bind:notes="notes"
+      @remove-notes="removeNote"
     />
-    <p v-else>No todos!</p>
+    <p v-else>No notes!</p>
   </div>
 </template>
 
 <script>
-  import TodoList from "@/components/TodoList"
-  import AddTodo from "@/components/AddTodo"
+  import NoteList from "@/components/NoteList"
+  import AddNote from "@/components/AddNote"
   import Loader from "@/components/Loader"
   export default {
     name: "app",
     data() {
       return {
-        todos: [],
+        notes: [],
         loading: true,
       }
     },
@@ -33,28 +33,23 @@
         .then((response) => response.json())
         .then((json) => {
           setTimeout(() => {
-            this.todos = json
+            this.notes = json
             this.loading = false
           }, 1000)
         })
     },
-    // watch: {
-    //   filter(value) {
-    //     console.log(value)
-    //   }
-    // },
 
     methods: {
-      removeTodo(id) {
-        this.todos = this.todos.filter((t) => t.id !== id)
+      removeNote(id) {
+        this.notes = this.notes.filter((t) => t.id !== id)
       },
-      addTodo(todo) {
-        this.todos.push(todo)
+      addNote(note) {
+        this.notes.push(note)
       },
     },
     components: {
-      TodoList,
-      AddTodo,
+      NoteList,
+      AddNote,
       Loader,
     },
   }
