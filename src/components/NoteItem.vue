@@ -4,7 +4,7 @@
       <strong>{{ index + 1 }}</strong>
       {{ note.title }}
     </span>
-    <button class="rm" v-on:click="$emit('remove-note', note.id)">
+    <button class="btn btn-primary" v-on:click="$emit('remove-note', note.id)">
       &times;
     </button>
   </li>
@@ -29,13 +29,6 @@
     justify-content: space-between;
     padding: 0.5rem 2rem;
     margin-bottom: 1rem;
-  }
-
-  .rm {
-    background: red;
-    color: #fff;
-    border-radius: 50%;
-    font-weight: bold;
   }
 
   input {

@@ -1,6 +1,5 @@
 <template>
-  <div id="nav">
-  </div>
+  <div id="nav"></div>
   <router-view />
 </template>
 
@@ -17,6 +16,5 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
   }
 </style>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navbar />
     <h2>Note application</h2>
     <router-link to="/">Home</router-link>
     <hr />
@@ -18,6 +19,7 @@
 
 <script>
   import NoteList from "@/components/NoteList"
+  import Navbar from "@/components/Navbar"
   import AddNote from "@/components/AddNote"
   import Loader from "@/components/Loader"
   export default {
@@ -51,6 +53,7 @@
       NoteList,
       AddNote,
       Loader,
+      Navbar,
     },
   }
 </script>

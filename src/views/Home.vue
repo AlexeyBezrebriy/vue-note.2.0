@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navbar />
     <h2>Home page</h2>
 
     <p>
@@ -11,3 +12,13 @@
     <router-link to="/notes">Notes</router-link>
   </div>
 </template>
+
+<script>
+  import Navbar from "@/components/Navbar.vue"
+  export default {
+    components: {
+      Navbar,
+    },
+  }
+</script>
+
