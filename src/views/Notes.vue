@@ -2,7 +2,7 @@
   <div>
     <Navbar />
     <h2>Note application</h2>
-    <router-link to="/">Home</router-link>
+
     <hr />
     <AddNote @add-note="addNote" />
 

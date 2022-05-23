@@ -1,10 +1,10 @@
 <template>
   <li>
-    <span>
-      <strong>{{ index + 1 }}</strong>
+    <span class="text">
+      <strong>{{ index + 1 }}.</strong>
       {{ note.title }}
     </span>
-    <button class="btn btn-primary" v-on:click="$emit('remove-note', note.id)">
+    <button class="btn btn-success" v-on:click="$emit('remove-note', note.id)">
       &times;
     </button>
   </li>
@@ -30,8 +30,15 @@
     padding: 0.5rem 2rem;
     margin-bottom: 1rem;
   }
-
+  strong {
+    padding-right: 5px;
+  }
   input {
     margin-right: 1rem;
+  }
+  .text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 </style>

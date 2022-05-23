@@ -8,8 +8,6 @@
       eveniet excepturi expedita impedit numquam quae quas tenetur velit
       voluptas!
     </p>
-
-    <router-link to="/notes">Notes</router-link>
   </div>
 </template>
 
@@ -21,4 +19,3 @@
     },
   }
 </script>
-
