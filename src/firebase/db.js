@@ -1,7 +1,7 @@
-import firebase from "firebase/app"
-import "firebase/firestore"
+import { initializeApp } from "firebase/app"
+import { getFirestore, collection } from "firebase/firestore"
 
-const firebaseConfig = {
+const firebaseApp = initializeApp({
   apiKey: "AIzaSyA12cURFLNkgOjAkbEqrDKHHfh3DQGDEXE",
 
   authDomain: "notesapp-dd025.firebaseapp.com",
@@ -16,6 +16,6 @@ const firebaseConfig = {
   messagingSenderId: "871142829363",
 
   appId: "1:871142829363:web:6d11e8af4cfe54413de246",
-}
+})
 
-export const db = firebase.initializeApp(firebaseConfig).firestore()
+export const db = getFirestore(firebaseApp)

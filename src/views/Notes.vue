@@ -20,7 +20,7 @@
   import NoteList from "@/components/NoteList"
   import AddNote from "@/components/AddNote"
   import Loader from "@/components/Loader"
-  //import { db } from "../firebase/db.js"
+  import { db } from "../firebase/db.js"
 
   export default {
     name: "app",
