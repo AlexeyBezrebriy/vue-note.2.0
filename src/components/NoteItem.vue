@@ -1,10 +1,13 @@
 <template>
-  <li>
+  <li class="">
     <span class="text">
       <strong>{{ index + 1 }}.</strong>
       {{ note.title }}
     </span>
-    <button class="btn btn-success" v-on:click="$emit('remove-note', note.id)">
+    <button
+      class="btn btn-outline-danger btn-sm"
+      v-on:click="$emit('remove-note', note.id)"
+    >
       &times;
     </button>
   </li>

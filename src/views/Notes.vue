@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navbar />
     <h2>Note application</h2>
 
     <hr />
@@ -19,9 +18,10 @@
 
 <script>
   import NoteList from "@/components/NoteList"
-  import Navbar from "@/components/Navbar"
   import AddNote from "@/components/AddNote"
   import Loader from "@/components/Loader"
+  //import { db } from "../firebase/db.js"
+
   export default {
     name: "app",
     data() {
@@ -37,7 +37,7 @@
           setTimeout(() => {
             this.notes = json
             this.loading = false
-          }, 1000)
+          }, 10)
         })
     },
 
@@ -45,6 +45,12 @@
       removeNote(id) {
         this.notes = this.notes.filter((t) => t.id !== id)
       },
+      // async addNote(note) {
+      //   if (note) {
+      //     await db.collection("notes").add({ title: note })
+      //   }
+
+      // },
       addNote(note) {
         this.notes.push(note)
       },
@@ -53,7 +59,6 @@
       NoteList,
       AddNote,
       Loader,
-      Navbar,
     },
   }
 </script>

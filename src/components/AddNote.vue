@@ -1,7 +1,9 @@
 <template>
   <form @submit.prevent="onSubmit">
-    <input type="text" v-model="title" />
-    <button type="submit">Create</button>
+    <div class="form-group">
+      <input class="form-control" type="text" v-model="title" />
+      <button class="btn btn-group-sm btn-success" type="submit">Create</button>
+    </div>
   </form>
 </template>
 
@@ -36,5 +38,12 @@
 
   input {
     width: 400px;
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  button {
+    margin-left: 10px;
+    margin-bottom: 2px;
   }
 </style>
