@@ -37,7 +37,8 @@
   }
 
   input {
-    width: 400px;
+    max-width: 400px;
+    min-width: 310px;
     display: inline-block;
     margin-left: 5px;
   }

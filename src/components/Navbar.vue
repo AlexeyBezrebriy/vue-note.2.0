@@ -17,5 +17,6 @@
 <style scoped>
   nav {
     padding-left: 4px;
+    margin-right: -5px;
   }
 </style>
