@@ -26,6 +26,7 @@
     dbRef,
     getNotesData,
     writeNoteData,
+    removeNoteData,
   } from "../firebase/firebase.js"
   import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore"
   import { getDatabase, ref, set, onValue } from "firebase/database"
@@ -85,7 +86,10 @@
     },
 
     methods: {
-      removeNote(id) {
+      async removeNote(id) {
+        console.log(id)
+        console.log(this.notes)
+        await removeNoteData(id)
         this.notes = this.notes.filter((t) => t.id !== id)
       },
 

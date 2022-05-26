@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app"
 import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore"
-import { getDatabase, ref, set, onValue } from "firebase/database"
+import { getDatabase, ref, set, onValue, push, update } from "firebase/database"
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyA12cURFLNkgOjAkbEqrDKHHfh3DQGDEXE",
@@ -30,6 +30,13 @@ export function writeNoteData(noteId, title, date) {
     title: title,
     date: date,
   })
+}
+
+export function removeNoteData(id) {
+  const updates = {}
+  updates["notes/" + id] = null
+
+  return update(ref(db), updates)
 }
 
 export async function getNotesData() {
