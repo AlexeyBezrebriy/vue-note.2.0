@@ -20,7 +20,7 @@
           const newNote = {
             id: Date.now(),
             title: this.title,
-            completed: false,
+            date: Date(),
           }
 
           this.$emit("add-note", newNote)

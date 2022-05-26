@@ -8,7 +8,6 @@
   export default {
     components: { Navbar },
   }
-  console.log("hi")
 </script>
 
 <style lang="scss">

@@ -6,6 +6,7 @@
         v-bind:note="note"
         v-bind:index="i"
         v-on:remove-note="removeNote"
+        :key="note.id"
       />
     </ul>
   </div>
