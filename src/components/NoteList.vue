@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <ul>
+  <div class="notes">
+    <transition-group tag="ul" name="list">
+      <!-- <ul> -->
       <NoteItem
         v-for="(note, i) of notes"
         v-bind:note="note"
@@ -8,7 +9,8 @@
         v-on:remove-note="removeNote"
         :key="note.id"
       />
-    </ul>
+      <!-- </ul> -->
+    </transition-group>
   </div>
 </template>
 
@@ -28,9 +30,36 @@
 </script>
 
 <style scoped>
-  ul {
-    list-style: none;
-    margin: 0;
+  .notes {
+    margin: 20px auto;
+    position: relative;
+  }
+
+  .notes ul {
+    position: relative;
     padding: 0;
+  }
+
+  .list-enter-from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  .list-enter-to {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .list-enter-active {
+    transition: all 0.4s ease;
+  }
+  .list-leave-from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .list-leave-to {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  .list-leave-active {
+    transition: all 0.4s ease;
   }
 </style>

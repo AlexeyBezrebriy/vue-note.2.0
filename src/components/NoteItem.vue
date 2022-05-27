@@ -2,7 +2,12 @@
   <li class="">
     <span class="text">
       <strong>{{ index + 1 }}.</strong>
-      {{ note.title }}
+      <strong>{{ note.title }}</strong>
+      <span class="date">
+        <i>
+          <small>{{ note.date }}</small>
+        </i>
+      </span>
     </span>
     <button
       class="btn btn-outline-danger btn-sm"
@@ -35,6 +40,12 @@
   }
   strong {
     padding-right: 5px;
+  }
+  i {
+    padding-left: 10px;
+  }
+  span {
+    margin-right: 1rem;
   }
   input {
     margin-right: 1rem;

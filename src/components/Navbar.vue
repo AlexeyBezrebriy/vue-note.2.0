@@ -19,4 +19,15 @@
     padding-left: 4px;
     margin-right: -5px;
   }
+  @media only screen and (max-width: 992px) {
+    .navbar {
+      justify-content: start;
+    }
+    .navbar-nav {
+      flex-direction: row;
+    }
+    .nav-item {
+      padding: 0px 8px;
+    }
+  }
 </style>

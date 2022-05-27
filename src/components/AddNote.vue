@@ -1,8 +1,12 @@
 <template>
   <form @submit.prevent="onSubmit">
     <div class="form-group">
-      <input class="form-control" type="text" v-model="title" />
-      <button class="btn btn-group-sm btn-success" type="submit">Create</button>
+      <input
+        class="form-control"
+        type="text"
+        v-model="title"
+        placeholder="Enter the text of note"
+      />
     </div>
   </form>
 </template>
@@ -20,11 +24,12 @@
           const newNote = {
             id: Date.now(),
             title: this.title,
-            date: Date(),
+            date: new Date().toLocaleDateString(),
           }
-
           this.$emit("add-note", newNote)
           this.title = ""
+        } else {
+          this.$emit("badValue")
         }
       },
     },
@@ -32,19 +37,16 @@
 </script>
 
 <style scoped>
-  form {
+  div {
     display: flex;
+    flex-wrap: wrap;
   }
 
   input {
-    max-width: 400px;
+    max-width: 600px;
     min-width: 310px;
     display: inline-block;
     margin-left: 5px;
-  }
-
-  button {
-    margin-left: 10px;
-    margin-bottom: 2px;
+    margin-top: 1rem;
   }
 </style>
