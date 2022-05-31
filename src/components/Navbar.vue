@@ -4,10 +4,10 @@
       <div class="navbar-brand">Vue-Note</div>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <router-link class="nav-link" to="/notes">Notes</router-link>
+          <router-link class="nav-link" to="/about">About</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/">Home</router-link>
+          <router-link class="nav-link" to="/">Notes</router-link>
         </li>
       </ul>
     </nav>

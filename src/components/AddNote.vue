@@ -24,7 +24,7 @@
           const newNote = {
             id: Date.now(),
             title: this.title,
-            date: new Date().toLocaleDateString(),
+            date: new Date().toJSON(),
           }
           this.$emit("add-note", newNote)
           this.title = ""
