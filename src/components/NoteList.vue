@@ -1,7 +1,6 @@
 <template>
   <div class="notes">
     <transition-group tag="ul" name="list">
-      <!-- <ul> -->
       <NoteItem
         v-for="(note, i) of notes"
         v-bind:note="note"
@@ -9,7 +8,6 @@
         v-on:remove-note="removeNote"
         :key="note.id"
       />
-      <!-- </ul> -->
     </transition-group>
   </div>
 </template>

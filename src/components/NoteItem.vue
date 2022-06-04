@@ -1,5 +1,5 @@
 <template>
-  <li class="">
+  <li>
     <span class="text">
       <strong>{{ index + 1 }}.</strong>
       <strong>{{ note.title }}</strong>

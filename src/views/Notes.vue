@@ -29,22 +29,21 @@
 
   export default {
     name: "app",
-    setup() {
-      const showAlert = ref(false)
-      const triggerAlert = () => {
-        showAlert.value = true
-        setTimeout(() => (showAlert.value = false), 3000)
-      }
-      return { showAlert, triggerAlert }
-    },
+
     data() {
       return {
         notes: [],
         loading: true,
+        showAlert: false,
       }
     },
 
     methods: {
+      triggerAlert() {
+        this.showAlert = true
+        setTimeout(() => (this.showAlert = false), 3000)
+      },
+
       async removeNote(id) {
         await removeNoteData(id)
         this.notes = this.notes.filter((t) => t.id !== id)

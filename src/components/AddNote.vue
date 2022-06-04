@@ -46,7 +46,7 @@
     max-width: 600px;
     min-width: 310px;
     display: inline-block;
-    margin-left: 5px;
-    margin-top: 1rem;
+    margin: 1rem;
+    margin-bottom: 0;
   }
 </style>
